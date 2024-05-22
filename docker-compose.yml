@@ -39,9 +39,9 @@ services:
     networks:
       - auctionnetwork
 
-volumes:
-  vaultdataVOL:
-    external: false
+#volumes:
+ # vaultdataVOL:
+  #  external: false
 
 networks:
   auctionnetwork:
