@@ -3,7 +3,7 @@ export VAULT_TOKEN='00000000-0000-0000-0000-000000000000'
 
 sleep 10
 
-vault kv put -mount secret secrets SecretKey=gAdDxQDQq7UYNxF3F8pLjVmGuU5u8g3y IssuerKey=5Jw9yT4fb9T5XrwKUz23QzA5D9BuY3p6
+vault kv put -mount secret secrets IssuerKey=gAdDxQDQq7UYNxF3F8pLjVmGuU5u8g3y SecretKey=5Jw9yT4fb9T5XrwKUz23QzA5D9BuY3p6
 
 while :
 do
