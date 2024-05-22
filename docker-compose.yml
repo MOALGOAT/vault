@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  vault_dev:
+  vaulthost:
     image: hashicorp/vault:latest
     restart: on-failure:10
     ports:
@@ -26,21 +26,21 @@ services:
     networks:
       - auctionnetwork
 
-vault-init:
-  image: hashicorp/vault:latest
-  command: sh "/app/vault-init.sh"
-  depends_on:
-    - vaulthost
-  healthcheck:
-    retries: 5
-  volumes:
-    - ./vault-init/vault_init.sh:/app/vault-init.sh
-  networks:
-    - auctionnetwork
+  vault-init:
+    image: hashicorp/vault:latest
+    command: sh "/app/vault-init.sh"
+    depends_on:
+      - vaulthost
+    healthcheck:
+      retries: 5
+    volumes:
+      - ./vault-init/vault_init.sh:/app/vault-init.sh
+    networks:
+      - auctionnetwork
 
-#volumes:
- #vaultdataVOL:
-  #external: false
+volumes:
+  vaultdataVOL:
+    external: false
 
 networks:
   auctionnetwork:
